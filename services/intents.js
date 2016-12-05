@@ -2,7 +2,7 @@
 
 const launch = (req, res) => {
   res
-    .say('oh no! fix me!')
+    .say('Welcome to movie quote.')
     .send()
 }
 

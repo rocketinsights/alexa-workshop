@@ -1,46 +1,24 @@
 # Boston node.js meetup Alexa Workshop
 
-### Part 1
+### Part 2
 
-Welcome to the boston node.js Alexa workshop. In this seven part series we will create a spelling bee game for the Amazon Echo from scratch.
+Congrats on getting this far! In this section we will cover deploying your skill to an AWS lambda. Note that in any real production environment we strongly encourage that you use an automated deployment process rather the process outlined below.
 
-### Prerequisites
+### Deploy skill to AWS lambda function
 
-* Node.js 4.3.2 installed locally.
-* Github account.
-* Basical understanding of javascript.
-* An AWS account to run the lambda function.
-* An amazon echo device. (Echo, dot, tap)
-* A smart phone.
+1. Sign into the AWS console and navigate to the [Lambda service](https://console.aws.amazon.com/lambda/home). Once there click `Create a Lambda Function`.
 
-### Getting started
+2. On the next screen select `Configure triggers` from the left hand navigation. (Yes, skip blueprint) Your screen should look like this:
+![Configure trigger](https://s3.amazonaws.com/alexa-workshop/aws-configure-trigger.png)
 
-* `npm install`
-* `npm test`
+3. On the `Configure function` screen name your function. In this workshop we are calling it movieQuote. Make sure `Node.js 4.3` is selected for the runtime. In the Lambda function code section select `Upload a .zip`.
 
-This should run a single test that fails.
+4. Zip up the `node_modules` folder, `services` folder and `index.js` file.
 
-## 
+5. Back in the AWS console hit the Upload button and select upload the .zip file you just created. In the Lambda function handler and role section leave it as `index.handler`. If you do not have an existing role with permissions for Lambda and Cloudwatch then select Create a custom role and create one first. Otherwise, select `Choose an existing role` and select a role that has the necessary permissions. (Lambda and cloudwatch) Your screen should look like this:
+![Configure function](https://s3.amazonaws.com/alexa-workshop/aws-configure-function.png)
 
-`ffmpeg -i 012856731-wrong-answer-buzzer.wav -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 len-low.mp3`
+6. Click the `Next` button at the bottom of the page.
 
-Game Play
-
-Open questions
-
-* Game will always be first to 15?
-
-Open tasks
-
-* If the user resumes we need to know what step / question to ask them.
-* We will probably need to DRY things up after the step above.
-* Need to a no intent for when we ask if a player is ready. If they are not ready then we should tell them that they can pause the game by saying alexa pause.
-* We need to add 'ready' to the yes intent or have it call play.
-
-1. Setup.
-2. Schema / alexa skill setup.
-3. Deploy / configs.
-4. Sessions.
-5. Single player game play.
-6. Multi player game play.
-7. Next steps.
+7. Verify the function in the review step, should look like the below image. If it does click `Create function`.
+![Configure trigger](https://s3.amazonaws.com/alexa-workshop/aws-lambda.png)
