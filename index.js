@@ -13,6 +13,8 @@ app.sessionEnded((req, res) => {
   logger.info('Session ended')
 })
 
+app.intent('answer', intents.answer)
+
 app.error = (exception, req, res) => {
   logger.info(exception)
   res.say('oh noes, we hit unexpected error.').send()

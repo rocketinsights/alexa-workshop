@@ -12,6 +12,7 @@
     "archiver": "^1.0.1",
     "async": "2.0.0-rc.5",
     "aws-sdk": "^2.5.2",
+    "lodash": "^4.17.2",
     "standard": "7.1.2",
     "winston": "2.2.0"
   },
