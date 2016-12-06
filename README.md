@@ -2,7 +2,9 @@
 
 ### Part 1
 
-Welcome to the boston node.js Alexa workshop. In this seven part series we will create a spelling bee game for the Amazon Echo from scratch.
+Welcome to the boston node.js Alexa workshop. In this for part series we will create a game for naming and guessing famous movie quotes for the Amazon Echo from scratch. This workshop is designed to get you started with the basics and then as a group we will work decide how to augment it with the remaining time.
+
+Each part is setup as a feature branch, with a README that is specific to each section. Now lets have some fun!
 
 ### Prerequisites
 
@@ -17,30 +19,3 @@ Welcome to the boston node.js Alexa workshop. In this seven part series we will 
 
 * `npm install`
 * `npm test`
-
-This should run a single test that fails.
-
-## 
-
-`ffmpeg -i 012856731-wrong-answer-buzzer.wav -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 len-low.mp3`
-
-Game Play
-
-Open questions
-
-* Game will always be first to 15?
-
-Open tasks
-
-* If the user resumes we need to know what step / question to ask them.
-* We will probably need to DRY things up after the step above.
-* Need to a no intent for when we ask if a player is ready. If they are not ready then we should tell them that they can pause the game by saying alexa pause.
-* We need to add 'ready' to the yes intent or have it call play.
-
-1. Setup.
-2. Schema / alexa skill setup.
-3. Deploy / configs.
-4. Sessions.
-5. Single player game play.
-6. Multi player game play.
-7. Next steps.
