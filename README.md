@@ -62,6 +62,3 @@ answer {movie}
 ![Configuration](https://s3.amazonaws.com/alexa-workshop/configuration.png)
 
 12. Click next. Your skill is now linked! Say `Alexa open move quote`.
-
-
- They have done an excellent job of abstracting out the hard parts of ASR (automatic speech recognition). More on this below. 
