@@ -1,7 +1,7 @@
 'use strict'
 
 const launch = (req, res) => {
-  res
+  return res
     .say('oh no! fix me!')
     .send()
 }
