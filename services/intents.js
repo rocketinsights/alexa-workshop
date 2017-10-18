@@ -1,17 +1,19 @@
 'use strict'
 
 const { questions } = require('../db/')
-
-const _question = () => {
-  // TODO - Randomize the questions and do not repeat the questions.
-  return questions[0]
-}
+const { fullscreenTemplate } = require('./templates')
+const _ = require('lodash')
 
 const launch = (req, res) => {
-  const round = _question()
+  const questionOrder = _.shuffle(_.range(questions.length))
+  const round = questions[questionOrder.pop()]
+  const directive = fullscreenTemplate(round.image)
+
   res
     .say(`Welcome to star wars. ${round.question}?`)
     .session('answer', round.answer)
+    .session('questionOrder', questionOrder)
+    .directive(directive)
     .shouldEndSession(false)
     .send()
 }
@@ -24,14 +26,28 @@ const answer = (req, res) => {
 
   let msg
   if (req.slot('character').toLowerCase() === req.session('answer')) {
-    msg = 'Wheeee'
+    msg = 'Correct!'
   } else {
     msg = 'That answer makes me a sad panda.'
   }
 
-  // TODO - Do not close the session, but ask another question until there have all been asked.
+  const questionOrder = _.shuffle(req.session('questionOrder'))
+  
+  // If we have gone through all of the questions then stop.
+  if (!questionOrder.length) {
+    return res.say('All done!').send()
+  }
+
+  const round = questions[questionOrder.pop()]
+  const directive = fullscreenTemplate(round.image)
+
   res
-    .say(msg)
+    .say(`${msg} Next character. ${round.question}`)
+    .shouldEndSession(false)
+    .session('answer', round.answer)
+    .session('questionOrder', questionOrder)
+    .directive(directive)
+    .shouldEndSession(false)
     .send()
 }
 
