@@ -11,7 +11,7 @@ describe('#INTENTS', () => {
 
       spyOn(res, 'say').and.callThrough()
       res.send = () => {
-        expect(res.say).toHaveBeenCalledWith('Welcome to spelling bee.')
+        expect(res.say).toHaveBeenCalledWith('Welcome to star wars.')
         done()
       }
       intentService.launch(req, res)

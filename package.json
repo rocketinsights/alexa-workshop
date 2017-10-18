@@ -4,16 +4,17 @@
   "private": true,
   "scripts": {
     "start": "node index.js",
+    "start-dev": "NODE_ENV=development nodemon --exec npm start",
     "test": "standard && jasmine",
-    "deploy": "AWS_PROFILE=alexa node deploy"
+    "expose": "node bin/ngrok.js"
   },
   "dependencies": {
-    "alexa-app": "^2.3.4",
-    "archiver": "^1.0.1",
-    "async": "2.0.0-rc.5",
-    "aws-sdk": "^2.5.2",
+    "alexa-app": "4.2.0",
+    "dotenv": "^4.0.0",
+    "ngrok": "^2.2.23",
     "standard": "7.1.2",
-    "winston": "2.2.0"
+    "winston": "2.2.0",
+    "bespoken-tools": "^0.9.45"
   },
   "devDependencies": {
     "jasmine": "2.4.1"

@@ -1,0 +1,61 @@
+{
+  "intents": [
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.PreviousIntent"
+    },
+    {
+      "intent": "AMAZON.NextIntent"
+    },
+    {
+      "intent": "AMAZON.ScrollUpIntent"
+    },
+    {
+      "intent": "AMAZON.ScrollLeftIntent"
+    },
+    {
+      "intent": "AMAZON.ScrollDownIntent"
+    },
+    {
+      "intent": "AMAZON.ScrollRightIntent"
+    },
+    {
+      "intent": "AMAZON.PageUpIntent"
+    },
+    {
+      "intent": "AMAZON.PageDownIntent"
+    },
+    {
+      "intent": "AMAZON.MoreIntent"
+    },
+    {
+      "intent": "AMAZON.NavigateHomeIntent"
+    },
+    {
+      "intent": "AMAZON.NavigateSettingsIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "seriesFlow"
+    },
+    {
+      "intent": "listSeries"
+    },
+    {
+      "slots": [
+        {
+          "name": "character",
+          "type": "character"
+        }
+      ],
+      "intent": "answer"
+    }
+  ]
+}
