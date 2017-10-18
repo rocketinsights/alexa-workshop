@@ -11,7 +11,7 @@ Each part is setup as a feature branch, with a README that is specific to each s
 * Node.js 6.10.1 installed locally.
 * Github account.
 * Basical understanding of javascript.
-* An [Alexa Developer account](developer.amazon.com/alexa)
+* An [Alexa Developer account](https://developer.amazon.com/alexa)
 
 ### Getting started
 
